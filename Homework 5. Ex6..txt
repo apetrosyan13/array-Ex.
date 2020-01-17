@@ -1,0 +1,48 @@
+ var book1 = {
+   book: "Catcher in the Rye",
+   readStatus: true,
+   percent: 40
+ };
+var book2 = {
+  book: "Animal Farm",
+  readStatus: true,
+  percent: 20
+ };
+var book3 = {
+  book: "Solaris",
+  readStatus: false,
+  percent: 90
+ };
+var book4 = {
+  book: "The Fall",
+  readStatus: true,
+  percent: 50
+ };
+var book5 = {
+  book: "White Nights",
+  readStatus: false,
+  percent: 60 
+ };
+var book6 = {
+  book: "After Dark",
+  readStatus: true,
+  percent: 70
+ };
+  var library = [book1, book2, book3, book4, book5, book6];
+  var result = [];
+  function compare(a, b) {
+     if (a.percent > b.percent ) {
+        return -1
+     }
+     if (a.percent < b.percent) {
+        return 1;
+     }
+        return 0
+  }
+   var sorted = (library.sort(compare));
+   for (var i = 0; i < sorted.length; i++) {
+     if (sorted[i].readStatus === true) {
+       result.push(sorted[i].book);
+     }
+   }
+console.log(result);
