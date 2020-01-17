@@ -1,0 +1,21 @@
+var arr1 = [1, [3, 4, [1, 2]], 10];
+var arr2 = [14, [1, [[[3, []]], 1], 0]];
+var newArray = [];
+var innerArray = [];
+ function flArray (arr) {
+   for ( var i = 0; i < arr.length; i++ ) {
+       newArray = newArray.concat(arr[i]);
+   }
+   for ( var j = 0; j < newArray.length; j++ ) {
+     if ( Array.isArray(newArray[j])) {
+       innerArray = newArray;
+        newArray = [];
+       return flArray(innerArray);
+     }
+       else if ( j === newArray.length - 1 ) {
+         return newArray;
+       }
+   }
+ }
+ 
+console.log(flArray(arr1));
